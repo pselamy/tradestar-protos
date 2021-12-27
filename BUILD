@@ -8,6 +8,6 @@ proto_library(
 )
 
 java_proto_library(
-    name = "strategies_proto_java_proto",
+    name = "strategies_java_proto",
     deps = [":strategies_proto"],
 )
