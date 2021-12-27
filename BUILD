@@ -6,3 +6,8 @@ proto_library(
     srcs = ["strategies.proto"],
     deps = ["@com_google_protobuf//:timestamp_proto"],
 )
+
+java_proto_library(
+    name = "strategies_proto_java_proto",
+    deps = [":strategies_proto"],
+)
