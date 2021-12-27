@@ -8,6 +8,9 @@ option java_package = "com.verlumen.protos.tradestar.strategies";
 enum SignalStrength {
   UNSPECIFIED = 0;
   WEAK = 1;
+  STRONG = 2;
+  VERY_STRONG = 3;
+  EXTREMELY_STRONG = 4;
 }
 
 message ADXParams {
