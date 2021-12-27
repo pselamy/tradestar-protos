@@ -5,6 +5,12 @@ package tradestar;
 option java_multiple_files = true;
 option java_package = "com.verlumen.protos.tradestar.strategies";
 
+message StrategyParams {
+  oneof strategy_one_of {
+    ADXParams adx_params = 1;
+  }
+}
+
 enum SignalStrength {
   UNSPECIFIED = 0;
   WEAK = 1;
