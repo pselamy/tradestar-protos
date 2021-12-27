@@ -1,15 +1,8 @@
-on:
-  push:
-    branches:
-      -main
-  pull_request:
-    branches:
-      -main
+name: Bazel Build
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
     steps:
     - uses: actions/checkout@v2
     - uses: bazelbuild/setup-bazelisk@v1
