@@ -1,0 +1,47 @@
+syntax = "proto2";
+
+package tradestar.backtesting;
+import "candles.proto";
+import "strategies.proto";
+option java_multiple_files = true;
+option java_package = "com.verlumen.tradestar.protos.backtesting";
+
+message BackTestRequest {
+  optional strategies.StrategyParams strategy_params = 1;
+  optional candles.Granularity granularity = 2;
+  optional google.protobuf.Timestamp start = 3;
+  optional int32 bar_count = 4;
+  optional double commission = 5;
+}
+
+message BackTestResult {
+  optional BackTestRequest back_test_request = 1;
+  // profit and loss
+  optional double average_loss = 2;
+  optional double average_profit = 3;
+  optional double gross_loss = 4;
+  optional double gross_profit = 5;
+  optional double gross_return = 6;
+  optional double net_loss = 7;
+  optional double net_profit = 8;
+  optional double profit_loss = 9;
+  optional double profit_loss_percentage = 10;
+  optional double profit_loss_ratio = 11;
+  // other criterion
+  optional double average_return_per_bar = 12;
+  optional double buy_and_hold_return = 13;
+  optional double expectancy = 14;
+  optional double expected_shortfall = 15;
+  optional double linear_transaction_cost = 16;
+  optional double losing_positions_ratio = 17;
+  optional double maximum_drawdown = 18;
+  optional int32 break_even_positions = 19;
+  optional int32 consecutive_winning_positions = 20;
+  optional int32 losing_positions = 21;
+  optional int32 positions = 22;
+  optional int32 winning_positions = 23;
+  optional double return_over_max_drawdown = 24;
+  optional double value_at_risk = 25;
+  optional double versus_buy_and_hold = 26;
+  optional double winning_positions_ration = 27;
+}
