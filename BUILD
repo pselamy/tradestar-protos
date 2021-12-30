@@ -17,6 +17,11 @@ proto_library(
 )
 
 proto_library(
+    name = "currencies_proto",
+    srcs = ["currencies.proto"],
+)
+
+proto_library(
     name = "strategies_proto",
     srcs = ["strategies.proto"],
 )

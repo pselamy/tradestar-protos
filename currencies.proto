@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package tradestar.currencies;
+
+option java_multiple_files = true;
+option java_package = "com.verlumen.tradestar.protos.currencies";
+
+message Instrument {
+  oneof instrument_one_of {
+    CurrencyPair currency_pair = 1;
+  }
+}
+
+message Currency {
+  optional string code = 1;
+  optional string display_name = 2;
+}
+
+message CurrencyPair {
+  optional Currency base = 1;
+  optional Currency quote = 2;
+}
+
+
