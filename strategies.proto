@@ -5,9 +5,9 @@ package tradestar.strategies;
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.strategies";
 
-message StrategyParams {
+message TradeStrategy {
   oneof strategy_one_of {
-    ADXParams adx_params = 1;
+    ADX adx = 1;
   }
 }
 
@@ -19,7 +19,7 @@ enum SignalStrength {
   EXTREMELY_STRONG = 4;
 }
 
-message ADXParams {
+message ADX {
   optional int32 bar_count = 1;
   optional SignalStrength buy_signal_strength = 2;
   optional SignalStrength sell_signal_strength = 3;
