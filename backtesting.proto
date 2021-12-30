@@ -1,6 +1,7 @@
 syntax = "proto2";
 
 package tradestar.backtesting;
+import "google/protobuf/timestamp.proto";
 import "candles.proto";
 import "strategies.proto";
 option java_multiple_files = true;

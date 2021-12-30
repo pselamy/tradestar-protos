@@ -7,6 +7,7 @@ proto_library(
     deps = [
         ":candles_proto",
         ":strategies_proto",
+        "@com_google_protobuf//:timestamp_proto",
     ],
 )
 
@@ -25,7 +26,6 @@ java_proto_library(
     visibility = ["//visibility:public"],
     deps = [
         ":backtesting_proto",
-        "@com_google_protobuf//:timestamp_proto",
     ],
 )
 
