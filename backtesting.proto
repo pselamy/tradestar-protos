@@ -14,7 +14,7 @@ message BackTestRequest {
   optional strategies.TradeStrategy trade_strategy = 3;
   optional candles.Granularity granularity = 4;
   optional google.protobuf.Timestamp start = 5;
-  optional int32 bar_count = 6;
+  optional google.protobuf.Timestamp end = 5;
   optional double commission = 7;
 }
 
