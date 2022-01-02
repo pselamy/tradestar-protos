@@ -36,6 +36,14 @@ java_proto_library(
 )
 
 java_proto_library(
+    name = "candles_java_proto",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":candles_proto",
+    ],
+)
+
+java_proto_library(
     name = "strategies_java_proto",
     visibility = ["//visibility:public"],
     deps = [":strategies_proto"],
