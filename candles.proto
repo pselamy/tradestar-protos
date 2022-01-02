@@ -5,6 +5,8 @@ package tradestar.candles;
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.candles";
 
+import "google/protobuf/timestamp.proto";
+
 enum Granularity {
   UNSPECIFIED = 0;
   ONE_MINUTE = 1;
