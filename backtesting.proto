@@ -16,7 +16,6 @@ message BackTestRequest {
   optional candles.Granularity granularity = 4;
   optional google.protobuf.Timestamp start = 6;
   optional google.protobuf.Timestamp end = 5;
-  optional double commission = 7;
 }
 
 message BackTestResult {
