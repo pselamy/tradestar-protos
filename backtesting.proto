@@ -47,5 +47,5 @@ message BackTestResult {
   optional double return_over_max_drawdown = 24;
   optional double value_at_risk = 25;
   optional double versus_buy_and_hold = 26;
-  optional double winning_positions_ration = 27;
+  optional double winning_positions_ratio = 27;
 }
