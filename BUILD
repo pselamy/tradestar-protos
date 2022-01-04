@@ -23,6 +23,11 @@ proto_library(
 )
 
 proto_library(
+    name = "exchanges_proto",
+    srcs = ["exchanges.proto"],
+)
+
+proto_library(
     name = "strategies_proto",
     srcs = ["strategies.proto"],
 )
@@ -32,6 +37,14 @@ java_proto_library(
     visibility = ["//visibility:public"],
     deps = [
         ":backtesting_proto",
+    ],
+)
+
+java_proto_library(
+    name = "exchanges_java_proto",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":exchanges_proto",
     ],
 )
 
