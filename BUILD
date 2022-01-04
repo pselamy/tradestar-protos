@@ -15,6 +15,9 @@ proto_library(
 proto_library(
     name = "candles_proto",
     srcs = ["candles.proto"],
+    deps = [
+        "@com_google_protobuf//:timestamp_proto",
+    ],
 )
 
 proto_library(
@@ -37,6 +40,14 @@ java_proto_library(
     visibility = ["//visibility:public"],
     deps = [
         ":backtesting_proto",
+    ],
+)
+
+java_proto_library(
+    name = "candles_java_proto",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":candles_proto",
     ],
 )
 
