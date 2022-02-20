@@ -7,7 +7,8 @@ option java_package = "com.verlumen.tradestar.protos.strategies";
 
 message TradeStrategy {
   oneof strategy_one_of {
-    ADXParams adx_params = 1;
+    CompositeTradeStrategy composite = 1;
+    ADXParams adx = 2;
   }
 }
 
@@ -17,6 +18,10 @@ enum SignalStrength {
   STRONG = 2;
   VERY_STRONG = 3;
   EXTREMELY_STRONG = 4;
+}
+
+message CompositeTradeStrategy {
+  repeated TradeStrategy strategies = 1;
 }
 
 message ADXParams {
