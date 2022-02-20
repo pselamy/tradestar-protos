@@ -8,7 +8,7 @@ option java_package = "com.verlumen.tradestar.protos.strategies";
 message TradeStrategy {
   oneof strategy_one_of {
     CompositeTradeStrategy composite = 1;
-    ADXParams adx = 2;
+    ADX adx = 2;
   }
 }
 
@@ -24,7 +24,7 @@ message CompositeTradeStrategy {
   repeated TradeStrategy strategies = 1;
 }
 
-message ADXParams {
+message ADX {
   optional int32 bar_count = 1;
   optional SignalStrength buy_signal_strength = 2;
   optional SignalStrength sell_signal_strength = 3;
