@@ -18,13 +18,12 @@ enum Granularity {
 }
 
 message Candle {
-  optional string exchange_name = 1;
-  optional Granularity granularity = 2;
-  optional google.protobuf.Timestamp start = 3;
-  optional double open = 4;
-  optional double high = 5;
-  optional double low = 6;
-  optional double close = 7;
-  optional double volume = 8;
+  optional Granularity granularity = 1;
+  optional google.protobuf.Timestamp start = 2;
+  optional double open = 3;
+  optional double high = 4;
+  optional double low = 5;
+  optional double close = 6;
+  optional double volume = 7;
 }
 
