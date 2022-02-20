@@ -6,7 +6,7 @@ option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.strategies";
 
 message TradeStrategy {
-  optional boolean negate = 1;
+  optional bool negate = 1;
   oneof strategy_one_of {
     Composite composite = 2;
     ADX adx = 3;
