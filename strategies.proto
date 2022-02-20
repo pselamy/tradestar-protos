@@ -7,8 +7,18 @@ option java_package = "com.verlumen.tradestar.protos.strategies";
 
 message TradeStrategy {
   oneof strategy_one_of {
-    CompositeTradeStrategy composite = 1;
+    Composite composite = 1;
     ADX adx = 2;
+  }
+  
+  message Composite {
+    repeated TradeStrategy strategies = 1;
+  }
+
+  message ADX {
+    optional int32 bar_count = 1;
+    optional SignalStrength buy_signal_strength = 2;
+    optional SignalStrength sell_signal_strength = 3;
   }
 }
 
@@ -18,14 +28,4 @@ enum SignalStrength {
   STRONG = 2;
   VERY_STRONG = 3;
   EXTREMELY_STRONG = 4;
-}
-
-message CompositeTradeStrategy {
-  repeated TradeStrategy strategies = 1;
-}
-
-message ADX {
-  optional int32 bar_count = 1;
-  optional SignalStrength buy_signal_strength = 2;
-  optional SignalStrength sell_signal_strength = 3;
 }
