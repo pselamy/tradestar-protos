@@ -10,12 +10,8 @@ option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.backtesting";
 
 message BackTestRequest {
-  optional exchanges.ExchangeMetadata exchange_metadata = 1;
-  optional currencies.Instrument instrument = 2;
-  optional strategies.TradeStrategy trade_strategy = 3;
-  optional candles.Granularity granularity = 4;
-  optional google.protobuf.Timestamp start = 6;
-  optional google.protobuf.Timestamp end = 5;
+  optional strategies.TradeStrategy trade_strategy = 1;
+  repeated candles.Candle candles = 2;
 }
 
 message BackTestResult {
