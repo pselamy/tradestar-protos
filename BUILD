@@ -6,10 +6,7 @@ proto_library(
     srcs = ["backtesting.proto"],
     deps = [
         ":candles_proto",
-        ":exchanges_proto",
-        ":currencies_proto",
         ":strategies_proto",
-        "@com_google_protobuf//:timestamp_proto",
     ],
 )
 
