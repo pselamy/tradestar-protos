@@ -10,7 +10,7 @@ option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.backtesting";
 
 message BackTestRequest {
-  optional strategies.TradeStrategy trade_strategies = 1;
+  optional strategies.TradeStrategy trade_strategy = 1;
   repeated candles.Candle candles = 2;
 }
 
