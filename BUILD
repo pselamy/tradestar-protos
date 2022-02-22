@@ -62,3 +62,10 @@ java_proto_library(
     visibility = ["//visibility:public"],
     deps = [":strategies_proto"],
 )
+
+java_proto_library(
+    name = "timestamp_java_proto",
+    deps = [
+        "@com_google_protobuf//:timestamp_proto",
+    ],
+)
