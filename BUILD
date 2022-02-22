@@ -65,6 +65,7 @@ java_proto_library(
 
 java_proto_library(
     name = "timestamp_java_proto",
+    visibility = ["//visibility:public"],
     deps = [
         "@com_google_protobuf//:timestamp_proto",
     ],
