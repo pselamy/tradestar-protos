@@ -30,17 +30,13 @@ message BackTestResult {
   optional double average_return_per_bar = 12;
   optional double buy_and_hold_return = 13;
   optional double expectancy = 14;
-  optional double expected_shortfall = 15;
-  optional double linear_transaction_cost = 16;
-  optional double losing_positions_ratio = 17;
-  optional double maximum_drawdown = 18;
-  optional int32 break_even_positions = 19;
-  optional int32 consecutive_winning_positions = 20;
-  optional int32 losing_positions = 21;
-  optional int32 positions = 22;
-  optional int32 winning_positions = 23;
-  optional double return_over_max_drawdown = 24;
-  optional double value_at_risk = 25;
-  optional double versus_buy_and_hold = 26;
-  optional double winning_positions_ratio = 27;
+  optional double losing_positions_ratio = 15;
+  optional double maximum_drawdown = 16;
+  optional int32 break_even_positions = 17;
+  optional int32 consecutive_winning_positions = 18;
+  optional int32 losing_positions = 19;
+  optional int32 positions = 20;
+  optional int32 winning_positions = 21;
+  optional double return_over_max_drawdown = 22;
+  optional double winning_positions_ratio = 23;
 }
