@@ -3,7 +3,7 @@ syntax = "proto2";
 package tradestar.currencies;
 
 option java_multiple_files = true;
-option java_package = "com.verlumen.tradestar.protos.currencies";
+option java_package = "com.verlumen.tradestar.protos.instruments";
 
 message Instrument {
   oneof instrument_one_of {
