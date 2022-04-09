@@ -17,8 +17,6 @@ git_repository(
     shallow_since = "1648566129 -0700"
 )
 
-load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS")
-load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS")
 load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
 
 grpc_java_repositories()
@@ -36,13 +34,7 @@ protobuf_deps()
 
 maven_install(
     artifacts = [] + IO_GRPC_GRPC_JAVA_ARTIFACTS,
-    generate_compat_repositories = True,
-    override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
     repositories = [
         "https://repo.maven.apache.org/maven2/",
     ],
 )
-
-load("@maven//:compat.bzl", "compat_repositories")
-
-compat_repositories()
