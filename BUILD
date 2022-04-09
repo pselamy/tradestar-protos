@@ -97,3 +97,9 @@ java_proto_library(
         "@com_google_protobuf//:timestamp_proto",
     ],
 )
+
+java_grpc_library(
+    name = "candle_service_java_grpc",
+    srcs = [":candle_service_proto"],
+    deps = [":candle_service_java_proto"],
+)
