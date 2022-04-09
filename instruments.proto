@@ -20,5 +20,3 @@ message CurrencyPair {
   optional Currency base = 1;
   optional Currency quote = 2;
 }
-
-
