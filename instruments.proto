@@ -6,8 +6,9 @@ option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.instruments";
 
 message Instrument {
-  oneof instrument_one_of {
-    CurrencyPair currency_pair = 1;
+  optional string symbol = 1;
+  oneof type_oneof {
+    CurrencyPair currency_pair = 2;
   }
 }
 
