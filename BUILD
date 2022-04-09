@@ -1,3 +1,4 @@
+load("@io_grpc_grpc_java//:java_grpc_library.bzl", "java_grpc_library")
 load("@rules_java//java:defs.bzl", "java_proto_library")
 load("@rules_proto//proto:defs.bzl", "proto_library")
 
@@ -48,6 +49,14 @@ java_proto_library(
     visibility = ["//visibility:public"],
     deps = [
         ":backtesting_proto",
+    ],
+)
+
+java_proto_library(
+    name = "candle_service_java_proto",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":candle_service_proto",
     ],
 )
 
