@@ -7,6 +7,7 @@ option java_package = "com.verlumen.tradestar.protos.candles";
 
 import "candles.proto";
 import "instruments.proto";
+import "google/protobuf/timestamp.proto";
 
 service CandleService {
   rpc GetCandles (GetCandlesRequest) returns (GetCandlesResponse) {}
