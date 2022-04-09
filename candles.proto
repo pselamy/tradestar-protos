@@ -27,3 +27,6 @@ message Candle {
   optional double volume = 7;
 }
 
+message CandleList {
+  repeated Candle candles = 1;
+}
