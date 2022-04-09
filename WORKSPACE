@@ -30,13 +30,12 @@ git_repository(
     shallow_since = "1580681072 -0800",
 )
 
-load("@com_google_protobuf//:protobuf_deps.bzl", "PROTOBUF_MAVEN_ARTIFACTS")
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
 
 maven_install(
-    artifacts = [] + IO_GRPC_GRPC_JAVA_ARTIFACTS + PROTOBUF_MAVEN_ARTIFACTS,
+    artifacts = [] + IO_GRPC_GRPC_JAVA_ARTIFACTS,
     generate_compat_repositories = True,
     override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
     repositories = [
