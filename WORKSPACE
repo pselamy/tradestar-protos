@@ -14,7 +14,7 @@ git_repository(
     name = "io_grpc_grpc_java",
     commit = "ff750a52717be34e7fa0d9a03a99268ccf8d495e",
     remote = "https://github.com/grpc/grpc-java",
-    shallow_since = "1580681072 -0800",
+    shallow_since = "1648566129 -0700"
 )
 
 load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS")
