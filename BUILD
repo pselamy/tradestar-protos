@@ -19,8 +19,8 @@ proto_library(
 )
 
 proto_library(
-    name = "currencies_proto",
-    srcs = ["currencies.proto"],
+    name = "instruments_proto",
+    srcs = ["instruments.proto"],
 )
 
 proto_library(
@@ -50,18 +50,18 @@ java_proto_library(
 )
 
 java_proto_library(
-    name = "currencies_java_proto",
-    visibility = ["//visibility:public"],
-    deps = [
-        ":currencies_proto",
-    ],
-)
-
-java_proto_library(
     name = "exchanges_java_proto",
     visibility = ["//visibility:public"],
     deps = [
         ":exchanges_proto",
+    ],
+)
+
+java_proto_library(
+    name = "instruments_java_proto",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":instruments_proto",
     ],
 )
 
