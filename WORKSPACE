@@ -36,10 +36,7 @@ load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 protobuf_deps()
 
 maven_install(
-    artifacts = [
-        "com.google.api.grpc:grpc-google-cloud-pubsub-v1:0.1.24",
-        "com.google.api.grpc:proto-google-cloud-pubsub-v1:0.1.24",
-    ] + IO_GRPC_GRPC_JAVA_ARTIFACTS + PROTOBUF_MAVEN_ARTIFACTS,
+    artifacts = [] + IO_GRPC_GRPC_JAVA_ARTIFACTS + PROTOBUF_MAVEN_ARTIFACTS,
     generate_compat_repositories = True,
     override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
     repositories = [
