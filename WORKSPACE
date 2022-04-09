@@ -8,8 +8,6 @@ git_repository(
     tag = "4.2",
 )
 
-load("@rules_jvm_external//:defs.bzl", "maven_install")
-
 git_repository(
     name = "io_grpc_grpc_java",
     commit = "ff750a52717be34e7fa0d9a03a99268ccf8d495e",
@@ -17,6 +15,7 @@ git_repository(
     shallow_since = "1648566129 -0700"
 )
 
+load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS")
 load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
 
 grpc_java_repositories()
@@ -31,6 +30,8 @@ git_repository(
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
+
+load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
     artifacts = [] + IO_GRPC_GRPC_JAVA_ARTIFACTS,
