@@ -11,6 +11,15 @@ proto_library(
 )
 
 proto_library(
+    name = "candle_service_proto",
+    srcs = ["candle_service.proto"],
+    deps = [
+        ":candles_proto",
+        "@com_google_protobuf//:timestamp_proto",
+    ],
+)
+
+proto_library(
     name = "candles_proto",
     srcs = ["candles.proto"],
     deps = [
