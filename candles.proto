@@ -1,4 +1,4 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package tradestar.candles;
 
@@ -18,13 +18,13 @@ enum Granularity {
 }
 
 message Candle {
-  optional Granularity granularity = 1;
-  optional google.protobuf.Timestamp start = 2;
-  optional double open = 3;
-  optional double high = 4;
-  optional double low = 5;
-  optional double close = 6;
-  optional double volume = 7;
+  Granularity granularity = 1;
+  google.protobuf.Timestamp start = 2;
+  double open = 3;
+  double high = 4;
+  double low = 5;
+  double close = 6;
+  double volume = 7;
 }
 
 message CandleList {
