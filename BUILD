@@ -1,4 +1,3 @@
-load("@io_grpc_grpc_java//:java_grpc_library.bzl", "java_grpc_library")
 load("@rules_java//java:defs.bzl", "java_proto_library")
 load("@rules_proto//proto:defs.bzl", "proto_library")
 
@@ -23,6 +22,7 @@ proto_library(
 
 proto_library(
     name = "candles_proto",
+    visibility = ["//visibility:public"],
     srcs = ["candles.proto"],
     deps = [
         "@com_google_protobuf//:timestamp_proto",
@@ -96,10 +96,4 @@ java_proto_library(
     deps = [
         "@com_google_protobuf//:timestamp_proto",
     ],
-)
-
-java_grpc_library(
-    name = "candle_service_java_grpc",
-    srcs = [":candle_service_proto"],
-    deps = [":candle_service_java_proto"],
 )
