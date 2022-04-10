@@ -12,6 +12,7 @@ proto_library(
 
 proto_library(
     name = "candle_service_proto",
+    visibility = ["//visibility:public"],
     srcs = ["candle_service.proto"],
     deps = [
         ":candles_proto",
@@ -48,6 +49,14 @@ java_proto_library(
     visibility = ["//visibility:public"],
     deps = [
         ":backtesting_proto",
+    ],
+)
+
+java_proto_library(
+    name = "candle_service_java_proto",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":candle_service_proto",
     ],
 )
 
