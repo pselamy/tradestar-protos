@@ -7,8 +7,19 @@ option java_package = "com.verlumen.tradestar.protos.instruments";
 
 message Instrument {
   string symbol = 1;
+  Type type = 2;
   oneof type_oneof {
-    CurrencyPair currency_pair = 2;
+    CurrencyPair currency_pair = 3;
+  }
+
+  enum Type {
+    STOCK = 0;
+    FOREX = 1;
+    EXCHANGE_RATE = 2;
+    CRYPTO = 3;
+    INDICATOR = 4;
+    SECTOR = 5;
+    FUNDAMENTALS = 6;
   }
 }
 
