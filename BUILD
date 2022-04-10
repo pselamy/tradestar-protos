@@ -12,6 +12,7 @@ proto_library(
 
 proto_library(
     name = "candle_service_proto",
+    visibility = ["//visibility:public"],
     srcs = ["candle_service.proto"],
     deps = [
         ":candles_proto",
@@ -22,7 +23,6 @@ proto_library(
 
 proto_library(
     name = "candles_proto",
-    visibility = ["//visibility:public"],
     srcs = ["candles.proto"],
     deps = [
         "@com_google_protobuf//:timestamp_proto",
