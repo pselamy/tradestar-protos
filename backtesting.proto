@@ -5,7 +5,6 @@ package tradestar.backtesting;
 import "candles.proto";
 import "instruments.proto";
 import "strategies.proto";
-import "time.proto";
 
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.backtesting";
