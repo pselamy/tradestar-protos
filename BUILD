@@ -44,6 +44,14 @@ proto_library(
     srcs = ["strategies.proto"],
 )
 
+proto_library(
+    name = "time_proto",
+    srcs = ["time.proto"],
+    deps = [
+        "@com_google_protobuf//:timestamp_proto",
+    ],
+)
+
 java_proto_library(
     name = "backtesting_java_proto",
     visibility = ["//visibility:public"],
@@ -88,6 +96,12 @@ java_proto_library(
     name = "strategies_java_proto",
     visibility = ["//visibility:public"],
     deps = [":strategies_proto"],
+)
+
+java_proto_library(
+    name = "time_java_proto",
+    visibility = ["//visibility:public"],
+    deps = [":time_proto"],
 )
 
 java_proto_library(
