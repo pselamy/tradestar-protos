@@ -12,8 +12,8 @@ message BackTestRequest {
   strategies.TradeStrategy trade_strategy = 1;
   repeated candles.Candle candles = 2;
   oneof test_strategy {
-    Standard standard = 1;
-    WalkForward walk_forward = 2;
+    Standard standard = 3;
+    WalkForward walk_forward = 4;
   }
   message Standard {}
   
