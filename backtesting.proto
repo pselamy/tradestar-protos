@@ -2,41 +2,50 @@ syntax = "proto3";
 
 package tradestar.backtesting;
 
-import "candles.proto";
+import "google/protobuf/timestamp.proto";
 import "strategies.proto";
+import "time.proto";
 
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.backtesting";
 
 message BackTestRequest {
   strategies.TradeStrategy trade_strategy = 1;
-  repeated candles.Candle candles = 2;
+  repeated time.TimeInterval time_intervals = 2;
 }
 
 message BackTestResult {
-  BackTestRequest back_test_request = 1;
-  // profit and loss
-  double average_loss = 2;
-  double average_profit = 3;
-  double gross_loss = 4;
-  double gross_profit = 5;
-  double gross_return = 6;
-  double net_loss = 7;
-  double net_profit = 8;
-  double profit_loss = 9;
-  double profit_loss_percentage = 10;
-  double profit_loss_ratio = 11;
-  // other criterion
-  double average_return_per_bar = 12;
-  double buy_and_hold_return = 13;
-  double expectancy = 14;
-  double losing_positions_ratio = 15;
-  double maximum_drawdown = 16;
-  int32 break_even_positions = 17;
-  int32 consecutive_winning_positions = 18;
-  int32 losing_positions = 19;
-  int32 positions = 20;
-  int32 winning_positions = 21;
-  double return_over_max_drawdown = 22;
-  double winning_positions_ratio = 23;
+  message ProfitLoss {
+    double amount = 1;
+    double average_loss = 2;
+    double average_profit = 3;
+    double gross_loss = 4;
+    double gross_profit = 5;
+    double net_loss = 6;
+    double net_profit = 7;
+    double percentage = 8;
+    double ratio = 9;
+  }
+
+  message Returns {
+    double gross = 1;
+    double average_per_bar = 2;
+    double buy_and_hold = 3;
+    double expectancy = 4;
+  }
+
+  message MaxDrawdown {
+    double amount = 1;
+    double return = 2;
+  }
+
+  message Positions {
+    int32 count = 1;
+    int32 losing = 2;
+    int32 winning = 3;
+    int32 consecutive_winning = 4;
+    int32 break_even = 5;
+    double losing_ratio = 6;
+    double winning_ratio = 7;
+  }
 }
