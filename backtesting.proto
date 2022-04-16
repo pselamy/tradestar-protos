@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package tradestar.backtesting;
 
-import "google/protobuf/timestamp.proto";
 import "strategies.proto";
 import "time.proto";
 
