@@ -3,18 +3,23 @@ syntax = "proto3";
 package tradestar.backtesting;
 
 import "candles.proto";
+import "instruments.proto";
 import "strategies.proto";
+import "time.proto";
 
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.backtesting";
 
 message BackTestRequest {
   strategies.TradeStrategy trade_strategy = 1;
-  repeated candles.Candle candles = 2;
+  instruments.Instrument instrument = 2;
+  candles.Granularity granularity = 3;
+  time.TimeInterval time_interval = 4;
   oneof test_strategy {
     Standard standard = 3;
     WalkForward walk_forward = 4;
   }
+  
   message Standard {}
   
   message WalkForward {
@@ -26,7 +31,12 @@ message BackTestRequest {
 }
 
 message BackTestResult {
-  message ProfitLoss {
+  ProfitLossReport profit_loss_report = 1;
+  ReturnReport return_report = 2;
+  MaxDrawdownReport max_drawdown_report = 3;
+  PositionReport position_report = 4;
+
+  message ProfitLossReport {
     double amount = 1;
     double average_loss = 2;
     double average_profit = 3;
@@ -38,19 +48,19 @@ message BackTestResult {
     double ratio = 9;
   }
 
-  message Returns {
+  message ReturnReport {
     double gross = 1;
     double average_per_bar = 2;
     double buy_and_hold = 3;
     double expectancy = 4;
   }
 
-  message MaxDrawdown {
+  message MaxDrawdownReport {
     double amount = 1;
     double return = 2;
   }
 
-  message Positions {
+  message PositionReport {
     int32 count = 1;
     int32 losing = 2;
     int32 winning = 3;
