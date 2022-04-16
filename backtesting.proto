@@ -2,15 +2,27 @@ syntax = "proto3";
 
 package tradestar.backtesting;
 
+import "candles.proto";
 import "strategies.proto";
-import "time.proto";
 
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.backtesting";
 
 message BackTestRequest {
   strategies.TradeStrategy trade_strategy = 1;
-  repeated time.TimeInterval time_intervals = 2;
+  repeated candles.Candle candles = 2;
+  oneof test_strategy {
+    Standard standard = 1;
+    WalkForward walk_forward = 2;
+  }
+  message Standard {}
+  
+  message WalkForward {
+    # the number of candles to skip at the start of each iteration.
+    int32 split_count = 1;
+    # the number of candles to include during each iteration.
+    int32 slice_count = 2;
+  }
 }
 
 message BackTestResult {
