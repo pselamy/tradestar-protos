@@ -12,9 +12,7 @@ option java_package = "com.verlumen.tradestar.protos.backtesting";
 
 message BackTestRequest {
   strategies.TradeStrategy trade_strategy = 1;
-  instruments.Instrument instrument = 2;
-  candles.Granularity granularity = 3;
-  time.TimeInterval time_interval = 4;
+  repeated candles.Candle candles = 2;
   oneof test_strategy {
     Standard standard = 3;
     WalkForward walk_forward = 4;
