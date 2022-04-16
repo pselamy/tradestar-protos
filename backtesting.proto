@@ -3,7 +3,6 @@ syntax = "proto3";
 package tradestar.backtesting;
 
 import "candles.proto";
-import "instruments.proto";
 import "strategies.proto";
 
 option java_multiple_files = true;
