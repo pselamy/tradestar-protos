@@ -18,9 +18,9 @@ message BackTestRequest {
   message Standard {}
   
   message WalkForward {
-    # the number of candles to skip at the start of each iteration.
+    // the number of candles to skip at the start of each iteration.
     int32 split_count = 1;
-    # the number of candles to include during each iteration.
+    // the number of candles to include during each iteration.
     int32 slice_count = 2;
   }
 }
