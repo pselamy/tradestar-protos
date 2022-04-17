@@ -5,6 +5,7 @@ package tradestar.candles;
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.candles";
 
+import "instruments.proto";
 import "google/protobuf/timestamp.proto";
 
 enum Granularity {
@@ -18,12 +19,17 @@ enum Granularity {
 }
 
 message Candle {
-  Granularity granularity = 1;
+  Descriptor descriptor = 1;
   google.protobuf.Timestamp start = 2;
   double open = 3;
   double high = 4;
   double low = 5;
   double close = 6;
   double volume = 7;
+  
+  message Descriptor {
+    Granularity granularity = 1;
+    instruments.Instrument instrument = 2;
+  }
 }
 
