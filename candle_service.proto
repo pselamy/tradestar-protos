@@ -13,7 +13,7 @@ service CandleService {
 }
 
 message GetCandlesRequest {
-  candles.Candle.Form form = 1;
+  candles.Candle.Type type = 1;
   time.TimeInterval time_interval = 2;
 }
 
