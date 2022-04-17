@@ -7,6 +7,7 @@ proto_library(
     deps = [
         ":candles_proto",
         ":strategies_proto",
+        ":time_proto",
     ],
 )
 
