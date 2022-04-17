@@ -13,8 +13,8 @@ service CandleService {
 }
 
 message GetCandlesRequest {
-  candles.Candle.Descriptor descriptor = 1;
-  time.TimeInterval timeInterval = 2;
+  candles.Candle.Form form = 1;
+  time.TimeInterval time_interval = 2;
 }
 
 message GetCandlesResponse {
