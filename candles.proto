@@ -19,7 +19,7 @@ enum Granularity {
 }
 
 message Candle {
-  Descriptor descriptor = 1;
+  Form form = 1;
   google.protobuf.Timestamp start = 2;
   double open = 3;
   double high = 4;
@@ -27,7 +27,7 @@ message Candle {
   double close = 6;
   double volume = 7;
   
-  message Descriptor {
+  message Form {
     Granularity granularity = 1;
     instruments.Instrument instrument = 2;
   }
