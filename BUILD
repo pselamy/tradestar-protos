@@ -19,6 +19,7 @@ proto_library(
     deps = [
         ":candles_proto",
         ":indicators_proto",
+        ":instruments_proto",
         ":time_proto",
     ],
 )
@@ -28,7 +29,6 @@ proto_library(
     srcs = ["candles.proto"],
     deps = [
         ":indicators_proto",
-        ":instruments_proto",
         "@com_google_protobuf//:timestamp_proto",
     ],
 )
@@ -112,13 +112,17 @@ java_proto_library(
 java_proto_library(
     name = "strategies_java_proto",
     visibility = ["//visibility:public"],
-    deps = [":strategies_proto"],
+    deps = [
+        ":strategies_proto",
+    ],
 )
 
 java_proto_library(
     name = "time_java_proto",
     visibility = ["//visibility:public"],
-    deps = [":time_proto"],
+    deps = [
+        ":time_proto",
+    ],
 )
 
 java_proto_library(
