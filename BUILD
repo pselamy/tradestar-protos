@@ -6,6 +6,7 @@ proto_library(
     srcs = ["backtesting.proto"],
     deps = [
         ":candles_proto",
+        ":instruments_proto",
         ":strategies_proto",
         ":time_proto",
     ],
