@@ -17,6 +17,7 @@ proto_library(
     srcs = ["candle_service.proto"],
     deps = [
         ":candles_proto",
+        ":indicators_proto",
         ":time_proto",
     ],
 )
