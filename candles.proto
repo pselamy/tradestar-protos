@@ -5,6 +5,7 @@ package tradestar.candles;
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.candles";
 
+import "indicators.proto";
 import "instruments.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -26,6 +27,7 @@ message Candle {
   double low = 5;
   double close = 6;
   double volume = 7;
+  repeated indicators.Indicator indicators = 8;
   
   message Type {
     Granularity granularity = 1;
