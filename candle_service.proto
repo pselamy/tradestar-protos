@@ -6,6 +6,7 @@ option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.candles";
 
 import "candles.proto";
+import "indicators.proto";
 import "time.proto";
 
 service CandleService {
@@ -15,6 +16,7 @@ service CandleService {
 message GetCandlesRequest {
   candles.Candle.Type type = 1;
   time.TimeInterval time_interval = 2;
+  repeated indicators.Indicator = 3;
 }
 
 message GetCandlesResponse {
