@@ -7,6 +7,7 @@ option java_package = "com.verlumen.tradestar.protos.candles";
 
 import "candles.proto";
 import "indicators.proto";
+import "instruments.proto";
 import "time.proto";
 
 service CandleService {
@@ -14,9 +15,10 @@ service CandleService {
 }
 
 message GetCandlesRequest {
-  candles.Candle.Type type = 1;
-  time.TimeInterval time_interval = 2;
-  repeated indicators.Indicator indicators = 3;
+  candles.Granularity granularity = 1;
+  instruments.Instrument instrument = 2;
+  time.TimeInterval time_interval = 3;
+  repeated indicators.Indicator indicators = 4;
 }
 
 message GetCandlesResponse {
