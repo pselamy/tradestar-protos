@@ -3,6 +3,7 @@ syntax = "proto3";
 package tradestar.backtesting;
 
 import "candles.proto";
+import "instruments.proto";
 import "strategies.proto";
 import "time.proto";
 
@@ -10,12 +11,13 @@ option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.backtesting";
 
 message BackTestRequest {
-  repeated strategies.TradeStrategy trade_strategies = 1;
-  candles.Candle.Type candle_type = 2;
+  instruments.Instrument instrument = 1;
+  candles.Granularity candle_granularity = 2;
   time.TimeInterval time_interval = 3;
+  repeated strategies.TradeStrategy trade_strategies = 4;
   oneof test_strategy {
-    Standard standard = 4;
-    WalkForward walk_forward = 5;
+    Standard standard = 5;
+    WalkForward walk_forward = 6;
   }
   
   message Standard {}
