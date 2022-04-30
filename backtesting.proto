@@ -10,7 +10,7 @@ import "time.proto";
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.backtesting";
 
-message BackTestRequest {
+message BacktestRequest {
   instruments.Instrument instrument = 1;
   candles.Granularity candle_granularity = 2;
   time.TimeInterval time_interval = 3;
@@ -30,7 +30,7 @@ message BackTestRequest {
   }
 }
 
-message BackTestResult {
+message BacktestResult {
   ProfitLossReport profit_loss_report = 1;
   ReturnReport return_report = 2;
   MaxDrawdownReport max_drawdown_report = 3;
