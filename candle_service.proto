@@ -16,7 +16,7 @@ service CandleService {
 message GetCandlesRequest {
   candles.Candle.Type type = 1;
   time.TimeInterval time_interval = 2;
-  repeated indicators.Indicator = 3;
+  repeated indicators.Indicator indicators = 3;
 }
 
 message GetCandlesResponse {
