@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package tradestar.indicators;
+
+option java_multiple_files = true;
+option java_package = "com.verlumen.tradestar.protos.indicators";
+
+message Indicator {
+  oneof type {
+    ADXIndicator adx = 1;
+  }
+}
+
+message ADXIndicator {
+  SignalStrength signal_strength = 1;
+}
+
+enum SignalStrength {
+  UNSPECIFIED = 0;
+  WEAK = 1;
+  STRONG = 2;
+  VERY_STRONG = 3;
+  EXTREMELY_STRONG = 4;
+}
