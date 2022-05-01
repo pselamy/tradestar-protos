@@ -15,7 +15,7 @@ message Indicator {
     }
   }
   
-  enum SignalStrength {
+  enum Type {
     UNSPECIFIED = 0;
     ADX = 1;
   }
