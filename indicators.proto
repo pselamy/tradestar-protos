@@ -11,8 +11,19 @@ message Indicator {
   }
 }
 
+message IndicatorParams {
+  oneof type {
+    ADXIndicator.Params adx = 1;
+  }
+}
+
 message ADXIndicator {
   SignalStrength signal_strength = 1;
+  
+  message Params {
+    int32 bar_count = 1;
+    int32 di_bar_count = 2;
+  }
 }
 
 enum SignalStrength {
