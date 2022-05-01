@@ -6,14 +6,18 @@ option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.indicators";
 
 message Indicator {
-  oneof type {
-    ADXIndicator adx = 1;
-  }
+  double value = 1;
+  Type type = 2;
   
   message Params {
     oneof type {
       ADXIndicator.Params adx = 1;
     }
+  }
+  
+  enum SignalStrength {
+    UNSPECIFIED = 0;
+    ADX = 1;
   }
 }
 
@@ -33,3 +37,4 @@ enum SignalStrength {
   VERY_STRONG = 3;
   EXTREMELY_STRONG = 4;
 }
+
