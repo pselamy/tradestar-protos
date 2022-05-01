@@ -7,8 +7,8 @@ option java_package = "com.verlumen.tradestar.protos.indicators";
 
 message Indicator {
   string name = 1;
-  Params params = 2;
-  double value = 3;
+  double value = 2;
+  Params params = 3;
   
   message Params {
     oneof type {
