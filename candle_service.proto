@@ -18,7 +18,7 @@ message GetCandlesRequest {
   candles.Granularity granularity = 1;
   instruments.Instrument instrument = 2;
   time.TimeInterval time_interval = 3;
-  repeated indicators.Indicator indicators = 4;
+  repeated indicators.Indicator.Params indicator_params = 4;
 }
 
 message GetCandlesResponse {
