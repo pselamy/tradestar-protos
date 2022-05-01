@@ -9,11 +9,11 @@ message Indicator {
   oneof type {
     ADXIndicator adx = 1;
   }
-}
-
-message IndicatorParams {
-  oneof type {
-    ADXIndicator.Params adx = 1;
+  
+  message Params {
+    oneof type {
+      ADXIndicator.Params adx = 1;
+    }
   }
 }
 
