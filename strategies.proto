@@ -35,7 +35,7 @@ message TradeStrategy {
 
   message ADX {
     int32 bar_count = 1;
-    instruments.ADX instrument = 2;
+    indicators.ADXIndicator indicator = 2;
     SignalStrength buy_signal_strength = 3;
     SignalStrength sell_signal_strength = 4;
   }
