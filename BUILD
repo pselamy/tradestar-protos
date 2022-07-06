@@ -35,6 +35,9 @@ proto_library(
     srcs = [
         "strategies.proto",
     ],
+    deps = [
+        ":indicators_proto",    
+    ]
 )
 
 proto_library(
@@ -81,7 +84,6 @@ java_proto_library(
     name = "strategies_java_proto",
     visibility = ["//visibility:public"],
     deps = [
-        ":indicators_proto",
         ":strategies_proto",
     ],
 )
