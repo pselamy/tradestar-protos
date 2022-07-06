@@ -45,3 +45,44 @@ enum SignalStrength {
   VERY_STRONG = 3;
   EXTREMELY_STRONG = 4;
 }
+
+message TradeStrategyTestResult {
+  ProfitLossReport profit_loss_report = 1;
+  ReturnReport return_report = 2;
+  MaxDrawdownReport max_drawdown_report = 3;
+  PositionReport position_report = 4;
+
+  message ProfitLossReport {
+    double amount = 1;
+    double average_loss = 2;
+    double average_profit = 3;
+    double gross_loss = 4;
+    double gross_profit = 5;
+    double net_loss = 6;
+    double net_profit = 7;
+    double percentage = 8;
+    double ratio = 9;
+  }
+
+  message ReturnReport {
+    double gross = 1;
+    double average_per_bar = 2;
+    double buy_and_hold = 3;
+    double expectancy = 4;
+  }
+
+  message MaxDrawdownReport {
+    double amount = 1;
+    double return = 2;
+  }
+
+  message PositionReport {
+    int32 count = 1;
+    int32 losing = 2;
+    int32 winning = 3;
+    int32 consecutive_winning = 4;
+    int32 break_even = 5;
+    double losing_ratio = 6;
+    double winning_ratio = 7;
+  }
+}
