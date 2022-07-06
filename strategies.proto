@@ -5,6 +5,8 @@ package tradestar.strategies;
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.strategies";
 
+import "indicators.proto";
+
 message TradeStrategy {
   Negation negation = 1;
   oneof strategy_one_of {
@@ -33,8 +35,9 @@ message TradeStrategy {
 
   message ADX {
     int32 bar_count = 1;
-    SignalStrength buy_signal_strength = 2;
-    SignalStrength sell_signal_strength = 3;
+    instruments.ADX instrument = 2;
+    SignalStrength buy_signal_strength = 3;
+    SignalStrength sell_signal_strength = 4;
   }
 }
 
