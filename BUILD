@@ -2,17 +2,6 @@ load("@rules_java//java:defs.bzl", "java_proto_library")
 load("@rules_proto//proto:defs.bzl", "proto_library")
 
 proto_library(
-    name = "backtesting_proto",
-    srcs = ["backtesting.proto"],
-    deps = [
-        ":candles_proto",
-        ":instruments_proto",
-        ":strategies_proto",
-        ":time_proto",
-    ],
-)
-
-proto_library(
     name = "candles_proto",
     srcs = ["candles.proto"],
     deps = [
@@ -22,22 +11,30 @@ proto_library(
 
 proto_library(
     name = "indicators_proto",
-    srcs = ["indicators.proto"],
+    srcs = [
+        "indicators.proto",
+    ],
 )
 
 proto_library(
     name = "instruments_proto",
-    srcs = ["instruments.proto"],
+    srcs = [
+        "instruments.proto",
+    ],
 )
 
 proto_library(
     name = "exchanges_proto",
-    srcs = ["exchanges.proto"],
+    srcs = [
+        "exchanges.proto",
+    ],
 )
 
 proto_library(
     name = "strategies_proto",
-    srcs = ["strategies.proto"],
+    srcs = [
+        "strategies.proto",
+    ],
 )
 
 proto_library(
@@ -45,14 +42,6 @@ proto_library(
     srcs = ["time.proto"],
     deps = [
         "@com_google_protobuf//:timestamp_proto",
-    ],
-)
-
-java_proto_library(
-    name = "backtesting_java_proto",
-    visibility = ["//visibility:public"],
-    deps = [
-        ":backtesting_proto",
     ],
 )
 
@@ -92,6 +81,7 @@ java_proto_library(
     name = "strategies_java_proto",
     visibility = ["//visibility:public"],
     deps = [
+        ":indicators_proto",
         ":strategies_proto",
     ],
 )
