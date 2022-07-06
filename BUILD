@@ -13,15 +13,6 @@ proto_library(
 )
 
 proto_library(
-    name = "backtest_service_proto",
-    visibility = ["//visibility:public"],
-    srcs = ["backtest_service.proto"],
-    deps = [
-        ":backtesting_proto",
-    ],
-)
-
-proto_library(
     name = "candles_proto",
     srcs = ["candles.proto"],
     deps = [
