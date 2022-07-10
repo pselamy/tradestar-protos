@@ -48,6 +48,18 @@ proto_library(
     ],
 )
 
+proto_library(
+    name = "trading_proto",
+    srcs = [
+        "trading.proto",
+    ],
+    deps = [
+        "@com_google_protobuf//:timestamp_proto",
+        ":exchanges_proto",
+        ":instruments_proto",
+    ],
+)
+
 java_proto_library(
     name = "candles_java_proto",
     visibility = ["//visibility:public"],
@@ -101,5 +113,13 @@ java_proto_library(
     visibility = ["//visibility:public"],
     deps = [
         "@com_google_protobuf//:timestamp_proto",
+    ],
+)
+
+java_proto_library(
+    name = "trading_java_proto",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":trading_proto",
     ],
 )

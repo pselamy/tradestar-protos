@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package tradestar.exchanges;
+
+option java_multiple_files = true;
+option java_package = "com.verlumen.tradestar.protos.trading";
+
+import "google/protobuf/timestamp.proto";
+
+import "exchanges.proto";
+import "instruments.proto";
+
+message Trade {
+  string id = 1;	
+  exchanges.ExchangeMetadata exchange = 2;
+  instruments.Instrument instrument = 3;
+  double volume = 4;	
+  double price	= 5;
+}
