@@ -53,6 +53,10 @@ proto_library(
     srcs = [
         "trading.proto",
     ],
+    deps = [
+        ":exchanges_proto",
+        ":instruments_proto",
+    ],
 )
 
 java_proto_library(
