@@ -16,4 +16,5 @@ message ExchangeTrade {
   instruments.Instrument instrument = 3;
   double volume = 4;	
   double price	= 5;
+  google.protobuf.Timestamp timestamp = 6;
 }
