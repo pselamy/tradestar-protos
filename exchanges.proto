@@ -9,7 +9,7 @@ message ExchangeMetadata {
   ExchangeName exchange_name = 1;
   double maker_fee = 2;
   double taker_fee = 3;
-  
+  string api_key = 4;
 }
 
 enum ExchangeName {
