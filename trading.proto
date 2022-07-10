@@ -12,7 +12,7 @@ import "instruments.proto";
 
 message ExchangeTrade {
   string id = 1;	
-  exchanges.ExchangeMetadata exchange = 2;
+  exchanges.ExchangeMetadata metadata = 2;
   instruments.Instrument instrument = 3;
   double volume = 4;	
   double price	= 5;
