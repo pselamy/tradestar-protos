@@ -48,6 +48,13 @@ proto_library(
     ],
 )
 
+proto_library(
+    name = "trading_proto",
+    srcs = [
+        "trading.proto",
+    ],
+)
+
 java_proto_library(
     name = "candles_java_proto",
     visibility = ["//visibility:public"],
