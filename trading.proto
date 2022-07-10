@@ -10,7 +10,7 @@ import "google/protobuf/timestamp.proto";
 import "exchanges.proto";
 import "instruments.proto";
 
-message Trade {
+message ExchangeTrade {
   string id = 1;	
   exchanges.ExchangeMetadata exchange = 2;
   instruments.Instrument instrument = 3;
