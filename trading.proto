@@ -5,6 +5,8 @@ package tradestar.exchanges;
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.trading";
 
+import "google/protobuf/timestamp.proto";
+
 import "exchanges.proto";
 import "instruments.proto";
 
