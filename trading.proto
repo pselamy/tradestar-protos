@@ -5,6 +5,9 @@ package tradestar.exchanges;
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.trading";
 
+import "exchanges.proto";
+import "instruments.proto";
+
 message Trade {
   string id = 1;	
   exchanges.Exchange exchange = 2;
