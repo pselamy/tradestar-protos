@@ -110,3 +110,11 @@ java_proto_library(
         "@com_google_protobuf//:timestamp_proto",
     ],
 )
+
+java_proto_library(
+    name = "trading_java_proto",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":trading_proto",
+    ],
+)
