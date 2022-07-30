@@ -5,7 +5,6 @@ proto_library(
     name = "candles_proto",
     srcs = ["candles.proto"],
     deps = [
-        ":instruments_proto",
         "@com_google_protobuf//:timestamp_proto",
     ],
 )
@@ -56,8 +55,6 @@ proto_library(
     ],
     deps = [
         "@com_google_protobuf//:timestamp_proto",
-        ":exchanges_proto",
-        ":instruments_proto",
     ],
 )
 
