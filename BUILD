@@ -20,13 +20,16 @@ proto_library(
     name = "instruments_proto",
     srcs = [
         "instruments.proto",
-    ],
+    ]
 )
 
 proto_library(
     name = "exchanges_proto",
     srcs = [
         "exchanges.proto",
+    ],
+    deps = [
+        ":instruments_proto",    
     ],
 )
 
