@@ -13,9 +13,9 @@ message ExchangeMetadata {
   double taker_fee = 3;
   string api_key = 4;
   repeated instruments.Instrument.Type instrument_types = 5;
-}
 
-enum ExchangeName {
-  UNSPECIFIED = 0;
-  COINBASE_PRO = 1;
+  enum ExchangeName {
+    UNSPECIFIED = 0;
+    COINBASE_PRO = 1;
+  }
 }
