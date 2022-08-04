@@ -20,7 +20,7 @@ proto_library(
     name = "instruments_proto",
     srcs = [
         "instruments.proto",
-    ]
+    ],
 )
 
 proto_library(
