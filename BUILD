@@ -28,6 +28,9 @@ proto_library(
     srcs = [
         "exchanges.proto",
     ],
+    deps = [
+        ":instruments_proto",    
+    ],
 )
 
 proto_library(
