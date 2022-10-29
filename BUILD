@@ -6,6 +6,7 @@ proto_library(
     srcs = ["candles.proto"],
     deps = [
         "@com_google_protobuf//:timestamp_proto",
+        ":instruments_proto",
     ],
 )
 

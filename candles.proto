@@ -7,6 +7,8 @@ option java_package = "com.verlumen.tradestar.protos.candles";
 
 import "google/protobuf/timestamp.proto";
 
+import "instruments.proto";
+
 enum Granularity {
   UNSPECIFIED = 0;
   ONE_MINUTE = 1;
@@ -24,4 +26,6 @@ message Candle {
   double low = 4;
   double close = 5;
   double volume = 6;
+  Granularity granularity = 7;
+  instruments.Instrument instrument = 8;
 }
