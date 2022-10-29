@@ -6,6 +6,7 @@ proto_library(
     srcs = ["candles.proto"],
     deps = [
         "@com_google_protobuf//:timestamp_proto",
+        ":instruments_proto",
     ],
 )
 
@@ -66,7 +67,6 @@ java_proto_library(
     visibility = ["//visibility:public"],
     deps = [
         ":candles_proto",
-        "
     ],
 )
 
