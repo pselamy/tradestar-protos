@@ -20,7 +20,7 @@ enum Granularity {
 }
 
 message Candle {
-  CandleDescriptor descriptor = 1;
+  CandleDescriptor candle_descriptor = 1;
   google.protobuf.Timestamp start = 2;
   double open = 3;
   double high = 4;
