@@ -11,13 +11,6 @@ proto_library(
 )
 
 proto_library(
-    name = "indicators_proto",
-    srcs = [
-        "indicators.proto",
-    ],
-)
-
-proto_library(
     name = "instruments_proto",
     srcs = [
         "instruments.proto",
@@ -39,9 +32,6 @@ proto_library(
     srcs = [
         "strategies.proto",
     ],
-    deps = [
-        ":indicators_proto",    
-    ]
 )
 
 proto_library(
@@ -76,14 +66,6 @@ java_proto_library(
     deps = [
         ":exchanges_proto",
     ],
-)
-
-java_proto_library(
-    name = "indicators_java_proto",
-    visibility = ["//visibility:public"],
-    deps = [
-        ":indicators_proto",
-    ]
 )
 
 java_proto_library(
