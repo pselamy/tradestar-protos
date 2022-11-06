@@ -5,6 +5,8 @@ package tradestar.strategies;
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.strategies";
 
+import "candles.proto";
+
 message TradeStrategy {
   Negation negation = 1;
   oneof strategy_one_of {
@@ -48,6 +50,7 @@ enum SignalStrength {
 
 message TradeStrategyTestResult {
   TradeStrategy strategy = 1;
+  candles.CandleDescriptor candle_descriptor = 2;
   ProfitLossReport profit_loss_report = 2;
   ReturnReport return_report = 3;
   MaxDrawdownReport max_drawdown_report = 4;
