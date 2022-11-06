@@ -89,14 +89,6 @@ java_proto_library(
 )
 
 java_proto_library(
-    name = "time_java_proto",
-    visibility = ["//visibility:public"],
-    deps = [
-        ":time_proto",
-    ],
-)
-
-java_proto_library(
     name = "timestamp_java_proto",
     visibility = ["//visibility:public"],
     deps = [
