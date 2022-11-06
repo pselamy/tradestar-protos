@@ -32,6 +32,9 @@ proto_library(
     srcs = [
         "strategies.proto",
     ],
+    deps = [
+        ":candles_proto",    
+    ],    
 )
 
 proto_library(
