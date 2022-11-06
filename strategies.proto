@@ -47,10 +47,11 @@ enum SignalStrength {
 }
 
 message TradeStrategyTestResult {
-  ProfitLossReport profit_loss_report = 1;
-  ReturnReport return_report = 2;
-  MaxDrawdownReport max_drawdown_report = 3;
-  PositionReport position_report = 4;
+  TradeStrategy strategy = 1;
+  ProfitLossReport profit_loss_report = 2;
+  ReturnReport return_report = 3;
+  MaxDrawdownReport max_drawdown_report = 4;
+  PositionReport position_report = 5;
 
   message ProfitLossReport {
     double amount = 1;
