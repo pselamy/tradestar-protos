@@ -39,14 +39,6 @@ proto_library(
 )
 
 proto_library(
-    name = "time_proto",
-    srcs = ["time.proto"],
-    deps = [
-        "@com_google_protobuf//:timestamp_proto",
-    ],
-)
-
-proto_library(
     name = "trading_proto",
     srcs = [
         "trading.proto",
@@ -85,14 +77,6 @@ java_proto_library(
     visibility = ["//visibility:public"],
     deps = [
         ":strategies_proto",
-    ],
-)
-
-java_proto_library(
-    name = "time_java_proto",
-    visibility = ["//visibility:public"],
-    deps = [
-        ":time_proto",
     ],
 )
 
