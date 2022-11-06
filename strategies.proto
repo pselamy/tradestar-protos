@@ -51,10 +51,10 @@ enum SignalStrength {
 message TradeStrategyTestResult {
   TradeStrategy strategy = 1;
   candles.CandleDescriptor candle_descriptor = 2;
-  ProfitLossReport profit_loss_report = 2;
-  ReturnReport return_report = 3;
-  MaxDrawdownReport max_drawdown_report = 4;
-  PositionReport position_report = 5;
+  ProfitLossReport profit_loss_report = 3;
+  ReturnReport return_report = 4;
+  MaxDrawdownReport max_drawdown_report = 5;
+  PositionReport position_report = 6;
 
   message ProfitLossReport {
     double amount = 1;
