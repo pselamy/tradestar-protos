@@ -5,11 +5,4 @@ package tradestar.exchanges;
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.trading";
 
-import "google/protobuf/timestamp.proto";
-
-message ExchangeTrade {
-  string id = 1;	
-  google.protobuf.Timestamp timestamp = 2;
-  double volume = 3;	
-  double price	= 4;
-}
+message TradeSignal {}
