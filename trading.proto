@@ -13,7 +13,7 @@ import "strategies.proto";
 
 message Position {
   OrderDescriptor order_descriptor = 1;
-  strategies.TradeStrategy = 2;
+  strategies.TradeStrategy strategy = 2;
 }
 
 message Order {
