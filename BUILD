@@ -84,6 +84,7 @@ proto_library(
         "trading.proto",
     ],
     deps = [
+        ":exchanges_proto",    
         ":instruments_proto",    
         ":strategies_proto",
         "@com_google_protobuf//:timestamp_proto",
