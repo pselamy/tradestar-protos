@@ -7,6 +7,7 @@ option java_package = "com.verlumen.tradestar.protos.trading";
 
 import "google/protobuf/timestamp.proto";
 
+import "exchanges.proto";
 import "instruments.proto";
 import "strategies.proto";
 
@@ -17,8 +18,9 @@ message Position {
 
 message Order {
   OrderDescriptor order_descriptor = 1;
-  double volume = 2;
-  double price = 3;
+  exchanges.ExchangeMetadata exchange = 2;
+  double volume = 3;
+  double price = 4;
 }
 
 message OrderDescriptor {
