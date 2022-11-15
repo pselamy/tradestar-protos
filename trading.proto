@@ -5,4 +5,40 @@ package tradestar.exchanges;
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.trading";
 
-message TradeSignal {}
+import "google/protobuf/timestamp.proto";
+
+import "instruments.proto";
+import "strategies.proto";
+
+message Position {
+  OrderDescriptor order_descriptor = 1;
+  strategies.TradeStrategy = 2;
+}
+
+message Order {
+  OrderDescriptor order_descriptor = 1;
+  double volume = 2;
+  double price = 3;
+}
+
+message OrderDescriptor {
+  OrderType order_type = 1;
+  instruments.Instrument instrument = 2;
+}
+
+enum OrderType {
+  UNSPECIFIED = 0;
+  BUY = 1;
+  SELL = 2;
+}
+
+message TradeDirective {
+  Order order = 1;
+  google.protobuf.Timestamp expiry = 2;    
+}
+
+message TradeSignal {
+  OrderDescriptor order_descriptor = 1;
+  google.protobuf.Timestamp expiry = 2;  
+}
+
