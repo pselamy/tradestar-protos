@@ -82,7 +82,12 @@ proto_library(
     name = "trading_proto",
     srcs = [
         "trading.proto",
-    ]
+    ],
+    deps = [
+        ":instruments_proto",    
+        ":strategies_proto",
+        "@com_google_protobuf//:timestamp_proto",
+    ],    
 )
 
 java_proto_library(
