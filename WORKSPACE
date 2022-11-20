@@ -11,7 +11,7 @@ git_repository(
     tag = "v3.18.2",
 )
 
-load("@com_google_protobuf//protobuf_deps.bzl", "protobuf_deps")
+load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
 
