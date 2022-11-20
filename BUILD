@@ -1,3 +1,4 @@
+load("@com_github_grpc_grpc//bazel:python_rules.bzl", "py_proto_library")
 load("@rules_java//java:defs.bzl", "java_proto_library")
 load("@rules_proto//proto:defs.bzl", "proto_library")
 
@@ -12,6 +13,14 @@ proto_library(
 
 java_proto_library(
     name = "candles_java_proto",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":candles_proto",
+    ],
+)
+
+py_proto_library(
+    name = "candles_py_proto",
     visibility = ["//visibility:public"],
     deps = [
         ":candles_proto",
@@ -36,6 +45,15 @@ java_proto_library(
     ],
 )
 
+
+py_proto_library(
+    name = "exchanges_py_proto",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":exchanges_proto",
+    ],
+)
+
 proto_library(
     name = "instruments_proto",
     srcs = [
@@ -45,6 +63,14 @@ proto_library(
 
 java_proto_library(
     name = "instruments_java_proto",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":instruments_proto",
+    ],
+)
+
+py_proto_library(
+    name = "instruments_py_proto",
     visibility = ["//visibility:public"],
     deps = [
         ":instruments_proto",
@@ -70,11 +96,11 @@ java_proto_library(
     ],
 )
 
-java_proto_library(
-    name = "timestamp_java_proto",
+py_proto_library(
+    name = "strategies_py_proto",
     visibility = ["//visibility:public"],
     deps = [
-        "@com_google_protobuf//:timestamp_proto",
+        ":strategies_proto",
     ],
 )
 
@@ -93,6 +119,14 @@ proto_library(
 
 java_proto_library(
     name = "trading_java_proto",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":trading_proto",
+    ],
+)
+
+py_proto_library(
+    name = "trading_py_proto",
     visibility = ["//visibility:public"],
     deps = [
         ":trading_proto",
