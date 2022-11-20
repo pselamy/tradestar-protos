@@ -14,3 +14,13 @@ git_repository(
 load("@com_google_protobuf//protobuf_deps.bzl", "protobuf_deps")
 
 protobuf_deps()
+
+git_repository(
+    name = "com_google_grpc_grpc",
+    remote = "https://github.com/grpc/grpc",
+    tag = "v1.50.1",
+)
+
+load("@com_google_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
+
+grpc_deps()
