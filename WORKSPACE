@@ -2,6 +2,9 @@ workspace(name = "tradestar_protos")
 
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
+############################
+##### PROTOBUF SUPPORT #####
+############################
 git_repository(
     name = "rules_proto",
     commit = "3212323502e21b819ac4fbdd455cb227ad0f6394",
