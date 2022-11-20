@@ -8,7 +8,7 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 git_repository(
     name = "rules_proto",
     remote = "https://github.com/bazelbuild/rules_proto",
-    tag = "5.3.0-21.5",
+    tag = "4.0.0-3.20.0",
 )
 
 load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
