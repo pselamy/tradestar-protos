@@ -11,6 +11,7 @@ message Instrument {
   oneof type_oneof {
     CurrencyPair currency_pair = 3;
   }
+  double volume_24h = 4;
 
   enum Type {
     UNSPECIFIED = 0;
