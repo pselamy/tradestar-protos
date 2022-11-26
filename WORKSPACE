@@ -2,18 +2,20 @@ workspace(name = "tradestar_protos")
 
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
-########################
-### PROTOBUF SUPPORT ###
-########################
+############################
+##### PROTOBUF SUPPORT #####
+############################
 git_repository(
-    name = "com_google_protobuf",
-    remote = "https://github.com/protocolbuffers/protobuf",
-    tag = "v3.18.2",
+    name = "rules_proto",
+    remote = "https://github.com/bazelbuild/rules_proto",
+    tag = "4.0.0-3.20.0",
 )
 
-load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
+load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
 
-protobuf_deps()
+rules_proto_dependencies()
+
+rules_proto_toolchains()
 
 git_repository(
     name = "com_github_grpc_grpc",
