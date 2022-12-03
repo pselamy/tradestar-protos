@@ -88,9 +88,10 @@ message TradeStrategyTestResult {
     int32 count = 1;
     int32 losing = 2;
     int32 winning = 3;
-    int32 consecutive = 4;
-    int32 break_even = 5;
-    double losing_ratio = 6;
-    double winning_ratio = 7;
+    int32 consecutive_winning = 4;
+    int32 consecutive_losing = 5;
+    int32 break_even = 6;
+    double losing_ratio = 7;
+    double winning_ratio = 8;
   }
 }
