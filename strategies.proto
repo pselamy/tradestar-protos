@@ -50,6 +50,13 @@ enum SignalStrength {
   EXTREMELY_STRONG = 4;
 }
 
+message TradeStrategyTestRequest {
+  TradeStrategy strategy = 1;
+  candles.CandleDescriptor candle_descriptor = 2;
+  google.protobuf.Timestamp start = 3;
+  google.protobuf.Timestamp end = 4;
+}
+
 message TradeStrategyTestResult {
   TradeStrategy strategy = 1;
   candles.CandleDescriptor candle_descriptor = 2;
