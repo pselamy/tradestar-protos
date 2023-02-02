@@ -34,6 +34,13 @@ enum OrderType {
   SELL = 2;
 }
 
+message Trade {
+  TradeDescriptor trade_descriptor = 1;
+  google.protobuf.Timestamp timestamp = 2;
+  double volume = 3;
+  double price = 4;
+}
+
 message TradeDescriptor {
   exchanges.ExchangeMetadata exchange = 1;
   instruments.Instrument instrument = 2;
