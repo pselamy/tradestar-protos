@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package tradestar.strategies;
+package tradestar.v1.strategies;
 
 option java_multiple_files = true;
-option java_package = "com.verlumen.tradestar.protos.strategies";
+option java_package = "com.verlumen.tradestar.protos.v1.strategies";
 
 import "google/protobuf/timestamp.proto";
 
