@@ -7,7 +7,7 @@ option java_package = "com.verlumen.tradestar.protos.v1.strategies";
 
 import "google/protobuf/timestamp.proto";
 
-import "candles.proto";
+import "protos/v1/candles.proto";
 
 message TradeStrategy {
   Negation negation = 1;
