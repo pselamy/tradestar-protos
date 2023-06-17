@@ -5,7 +5,7 @@ package tradestar.v1.exchanges;
 option java_multiple_files = true;
 option java_package = "com.verlumen.tradestar.protos.v1.exchanges";
 
-import "instruments.proto";
+import "protos/v1/instruments.proto";
 
 message ExchangeMetadata {
   string exchange_name = 1;
