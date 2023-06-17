@@ -1,15 +1,15 @@
 syntax = "proto3";
 
-package tradestar.trading;
+package tradestar.v1.trading;
 
 option java_multiple_files = true;
-option java_package = "com.verlumen.tradestar.protos.trading";
+option java_package = "com.verlumen.tradestar.protos.v1.trading";
 
 import "google/protobuf/timestamp.proto";
 
-import "exchanges.proto";
-import "instruments.proto";
-import "strategies.proto";
+import "v1/exchanges.proto";
+import "v1/instruments.proto";
+import "v1/strategies.proto";
 
 message Position {
   OrderDescriptor order_descriptor = 1;
