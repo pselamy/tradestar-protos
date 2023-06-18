@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package tradestar.v2.candles;
+
+import "google/protobuf/timestamp.proto";
+
+import "v2/exchanges.proto";
+import "v2/instruments.proto";
+
+enum Granularity {
+  UNSPECIFIED = 0;
+  ONE_MINUTE = 1;
+  FIVE_MINUTES = 2;
+  FIFTEEN_MINUTES = 3;
+  ONE_HOUR = 4;
+  SIX_HOURS = 5;
+  ONE_DAY = 6;
+}
+
+message Candle {
+  CandleDescriptor candle_descriptor = 1;
+  google.protobuf.Timestamp start = 2;
+  double open = 3;
+  double high = 4;
+  double low = 5;
+  double close = 6;
+  double volume = 7;
+}
+
+message CandleDescriptor {
+  Granularity granularity = 1;
+  instruments.Instrument instrument = 2;
+  exchanges.Exchange exchange = 3;
+}

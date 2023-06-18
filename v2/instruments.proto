@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package tradestar.v2.instruments;
+
+import "v2/currencies.proto";
+
+message Instrument {
+  oneof type_oneof {
+    currencies.CurrencyPair currency_pair = 1;
+  }
+}
