@@ -2,11 +2,9 @@ syntax = "proto3";
 
 package tradestar.v2.candles;
 
-option java_multiple_files = true;
-option java_package = "com.verlumen.tradestar.protos.v2.candles";
-
 import "google/protobuf/timestamp.proto";
 
+import "v2/exchanges.proto";
 import "v2/instruments.proto";
 
 enum Granularity {
@@ -32,4 +30,5 @@ message Candle {
 message CandleDescriptor {
   Granularity granularity = 1;
   instruments.Instrument instrument = 2;
+  exchanges.Exchange exchange = 3;
 }
