@@ -17,3 +17,16 @@ py_proto_library(
         ":candles_proto",
     ],
 )
+
+proto_library(
+    name = "exchanges_proto",
+    srcs = ["exchanges.proto"],
+)
+
+py_proto_library(
+    name = "exchanges_py_proto",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":exchanges_proto",
+    ],
+)
