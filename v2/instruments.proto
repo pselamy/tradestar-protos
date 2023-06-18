@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package tradestar.v1.instruments;
 
-import "v2/currencies";
+import "v2/currencies.proto";
 
 message Instrument {
   oneof type_oneof {
