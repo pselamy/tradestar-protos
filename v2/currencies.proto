@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package tradestar.v1.instruments;
+package tradestar.v2.instruments;
 
 message Currency {
   string code = 1;
