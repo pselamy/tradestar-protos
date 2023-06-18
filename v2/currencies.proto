@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package tradestar.v1.instruments;
+
+message Currency {
+  string code = 1;
+  string display_name = 2;
+  CurrencyType type = 3;
+}
+
+message CurrencyPair {
+  Currency base = 1;
+  Currency quote = 2;
+}
+
+enum CurrencyType {
+  UNSPECIFIED = 0;
+  FIAT = 1;
+  CRYPTO = 2;
+}
